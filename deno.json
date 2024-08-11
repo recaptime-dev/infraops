@@ -1,0 +1,10 @@
+{
+    "tasks": {
+        "dotenvx": "deno run -A npm:@dotenvx/dotenvx",
+        "run-dotenvx": "deno run -A npm:@dotenvx/dotenvx run",
+        "secret:get": "deno run -A npm:@dotenvx/dotenvx get",
+        "secret:set": "deno task dotenvx set",
+        "setup": "./scripts/setup"
+    },
+    "nodeModulesDir": true
+}

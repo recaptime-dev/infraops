@@ -1,0 +1,13 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+octodns = {editable = true, ref = "a6b6bfdd0399bdaf10917c7558e71881081e3e78", git = "git+https://github.com/octodns/octodns.git"}
+octodns-cloudflare = {editable = true, ref = "bcaa09c974ce81d7497a2fdfa5c214ab75609beb", git = "git+https://github.com/octodns/octodns-cloudflare.git"}
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"

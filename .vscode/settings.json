@@ -1,0 +1,13 @@
+{
+    "dotenv.enableAutocloaking": true,
+    "git.alwaysSignOff": true,
+    "conventionalCommits.scopes": [
+        "dns",
+        "cookbooks",
+        "docs",
+        "scripts",
+        "github-actions",
+        "global"
+    ],
+    "deno.enable": true
+}
