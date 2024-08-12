@@ -1,0 +1,723 @@
+---
+? ''
+: - octodns:
+      cloudflare:
+        auto-ttl: true
+        proxied: true
+    ttl: 300
+    type: ALIAS
+    value: recaptime-dev.pages.dev.
+  - octodns:
+      cloudflare:
+        auto-ttl: true
+        comment: CAA violation reports bot
+    ttl: 300
+    type: CAA
+    values:
+    - flags: 0
+      tag: iodef
+      value: mailto:abuse@recaptime.dev
+    - flags: 0
+      tag: issue
+      value: letsencrypt.org
+    - flags: 0
+      tag: issue
+      value: pki.goog; cansignhttpexchanges=yes
+    - flags: 0
+      tag: issue
+      value: sectigo.com
+  - octodns:
+      cloudflare:
+        auto-ttl: true
+    ttl: 300
+    type: MX
+    values:
+    - exchange: route2.mx.cloudflare.net.
+      preference: 75
+    - exchange: route1.mx.cloudflare.net.
+      preference: 89
+    - exchange: route3.mx.cloudflare.net.
+      preference: 97
+  - octodns:
+      cloudflare:
+        auto-ttl: true
+    ttl: 300
+    type: TXT
+    values:
+    - MS=A2490EA5DE5BD77D633C1A9AFCA9C264E276EBCD
+    - MS=ms64741633
+    - be6d4c835bfc14f1283b37cd62db35c5a87665441352e125f4aebc233005b382
+    - google-site-verification=RLKQLz6UKLbCbVMm9oCr0zHvNvcAlsC1rifwUTJazEI
+    - hosted-email-verify=kdr1ifgu
+    - keybase-site-verification=N3_PG4Oy_e2a7NDXdM_ql7F_oMZPNvLGjvf6Y400ZC4
+    - keybase-site-verification=PUOyTcXeqxvgXhYlBQpWocuiG1AU0um_DKacumYFzq4
+    - 'mailru-domain: YftE9VeuZ2EZTPbu'
+    - v=spf1 include:_spf.mx.cloudflare.net ~all
+    - 'yandex-verification: 0d2fdb26bfcf7aa1'
+'*':
+  - octodns:
+      cloudflare:
+        auto-ttl: true
+        comment: wildcard proxyparty redirect via GCP
+    ttl: 300
+    type: A
+    value: "34.121.49.227"
+  - octodns:
+      cloudflare:
+        auto-ttl: true
+        comment: wildcard proxyparty redirect via GCP
+    ttl: 300
+    type: AAAA
+    value: "2600:1900:4001:b0b::"
+_acme-challenge.cla:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: 4098ccaeee07e96751053e10._acme.deno.dev.
+_acme-challenge.cw:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: 8490fe8d100bd4064e3ce175._acme.deno.dev.
+_acme-challenge.okta-oauth-experiments.sandbox:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: n6yu3lnmZbaKKWYnfwewiKvAqr32KoWn3lXpe5m3mk8
+_acme-challenge.sso.crew:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: _acme-challenge.01c729a00ed90e0d5ce3319438ec13e6.recaptimesquad.kinde.com.
+_acme-challenge.thirdparty.sso:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: _acme-challenge.8f85bc99c1472be891e42960fc448633.recaptimesquad.kinde.com.
+_crisp.support:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: crisp-website-id=49cc5c3f-c46d-4e9f-a467-b0a4185942f0
+_crisp.support.mail:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: crisp-website-id=49cc5c3f-c46d-4e9f-a467-b0a4185942f0
+_dmarc:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: v=DMARC1\; p=quarantine\; pct=95\; rua=mailto:afd3d046c5c744789d3a1ecada9c6534@dmarc-reports.cloudflare.net,mailto:abuse@recaptime.eu.org
+_dmarc.support.mail:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: _dmarc.crisp.email.
+_doppler_abdtrafaahmsb:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: Verification code for Doppler for Email + SAML SSO
+  ttl: 300
+  type: TXT
+  value: 4AJ6fZPZDEF7JxKO5eGVw9xYrTtV3VjQ
+_doppler_d8y58xznwkve5.crew:
+  ttl: 60
+  type: TXT
+  value: ttdgb7ZU9Lk5bclh7kZlmiqnzjJ3E6Zy
+_doppler_emdmu5ubqbnpr.crew:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: Same for the root domain, but for Azure AD
+  ttl: 300
+  type: TXT
+  value: 00nkPXhXbbf9dnXyM4kZ5RJXDLt03pzl
+_github-challenge-internal-recaptime-dev-org.crew:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: gh-org:recaptimedev-internal
+  ttl: 300
+  type: TXT
+  value: 5dc3e3e1b8
+_github-challenge-lorebooks-wiki-org:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: github:@lorebooks-wiki
+  ttl: 300
+  type: TXT
+  value: 775dfeb106
+_github-challenge-recaptime-org.crew:
+  ttl: 60
+  type: TXT
+  value: 5637bbbea6
+_github-challenge-recaptime-organization:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: '5357527408'
+_keybase.jira:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: keybase:recaptimesupport
+  ttl: 300
+  type: TXT
+  value: keybase-site-verification=0wbOaAhc5Py9e0KlpjRRXjH3oSoTpb9DZKRN1ZuBVPA
+_vercel:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: hashnode verification token
+  ttl: 300
+  type: TXT
+  value: vc-domain-verify=blog.recaptime.eu.org,f07aa6b6adcfea251e54
+atlassian-4ca01f._domainkey.server.mirrors:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: atlassian-4ca01f.dkim.atlassian.net.
+atlassian-150d29._domainkey.jira:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: atlassian-150d29.dkim.atlassian.net.
+atlassian-297406._domainkey.jira:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: atlassian-297406.dkim.atlassian.net.
+atlassian-bounces.jira:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: bounces.mail-us.atlassian.net.
+atlassian-bounces.server.mirrors:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: bounces.mail-us.atlassian.net.
+atlassian-dce437._domainkey.server.mirrors:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: atlassian-dce437.dkim.atlassian.net.
+autodiscover.guest.recaptime:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: autodiscover.outlook.com.
+automations:
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: MX
+  value:
+    exchange: mx.yandex.net.
+    preference: 10
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  values:
+  - v=spf1 redirect=_spf.yandex.net
+  - 'yandex-verification: 96ff25810817b35f'
+blog:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: hashnode.network.
+bounces.noreply:
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: resend.com
+  ttl: 300
+  type: MX
+  value:
+    exchange: feedback-smtp.eu-west-1.amazonses.com.
+    preference: 10
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: resend.com SPF stuff
+  ttl: 300
+  type: TXT
+  value: v=spf1 include:amazonses.com ~all
+cdn:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: recaptime-public-cdn.pages.dev.
+cicd-toolkit.docs:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: cicd-toolkit.pages.dev.
+cla:
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: CLA webapp, built with Deno
+  ttl: 300
+  type: A
+  value: 34.120.54.55
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: IPv6 native Deno Deploy Anycast servers for CLA
+  ttl: 300
+  type: AAAA
+  value: '2600:1901:0:6d85::'
+crew:
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: MX
+  values:
+  - exchange: route2.mx.cloudflare.net.
+    preference: 75
+  - exchange: route1.mx.cloudflare.net.
+    preference: 89
+  - exchange: route3.mx.cloudflare.net.
+    preference: 97
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  values:
+  - MS=ms73666268
+  - atlassian-domain-verification=Beg4N1aB/9owCmMnPt/WuGmkv7pyEjBmr8V5ICzgzAOf5hFhrLoGU7P92dFMIlYv
+  - hosted-email-verify=waqtga8n
+  - 'mailru-domain: yFhvwLvewUONtMFh'
+  - v=spf1 include:_spf.mx.cloudflare.net ~all
+crisp._domainkey.support.mail:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: crisp._domainkey.crisp.email.
+cw:
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: A
+  value: 34.120.54.55
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: AAAA
+  value: '2600:1901:0:6d85::'
+fqloaimealev.wiki:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: gv-i4xtaqwuh5rpy5.dv.googlehosted.com.
+freshworks:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: fw_ddc58148dd1dd60e5948ef734c7dc8e4.myfreshworks.com.
+glauca2.whitelabels:
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: A
+  value: 45.129.95.251
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: AAAA
+  value: 2a0e:1cc1:1::1:e
+glauca.whitelabels:
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: A
+  value: 45.129.95.255
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: AAAA
+  value: 2a0e:1cc1:1::1:1
+go:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: recaptime-golinks.darkcustomdomain.com.
+guest:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: MS=ms99507665
+guest.recaptime:
+- type: MX
+  value:
+    exchange: guest-recaptime-eu-org.mail.eo.outlook.com.
+    preference: 0
+- type: TXT
+  value: v=spf1 include:spf.protection.outlook.com -all
+internal:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: ghs.googlehosted.com.
+internal.wiki:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: ghs.googlehosted.com.
+jira:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: keybase:recaptimesupport
+  ttl: 300
+  type: TXT
+  values:
+  - atlassian-sending-domain-verification=f45f859c-9d79-4e9a-9544-f17e786fef13
+  - keybase-site-verification=0wbOaAhc5Py9e0KlpjRRXjH3oSoTpb9DZKRN1ZuBVPA
+key1._domainkey:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: migadu
+  ttl: 300
+  type: CNAME
+  value: key1.recaptime.eu.org._domainkey.migadu.com.
+key1._domainkey.crew:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: key1.crew.recaptime.eu.org._domainkey.migadu.com.
+key2._domainkey:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: migadu
+  ttl: 300
+  type: CNAME
+  value: key2.recaptime.eu.org._domainkey.migadu.com.
+key2._domainkey.crew:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: migadu
+  ttl: 300
+  type: CNAME
+  value: key2.crew.recaptime.eu.org._domainkey.migadu.com.
+key3._domainkey:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: migadu
+  ttl: 300
+  type: CNAME
+  value: key3.recaptime.eu.org._domainkey.migadu.com.
+key3._domainkey.crew:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: migadu
+  ttl: 300
+  type: CNAME
+  value: key3.crew.recaptime.eu.org._domainkey.migadu.com.
+links.support.mail:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: links.custom.crisp.email.
+m1._domainkey.mail:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: m1.domainkey.uc6vfc02k4flcv3pktc70.mailazy.net.
+m2._domainkey.mail:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: m2.domainkey.uc6vfc02k4flcv3pktc70.mailazy.net.
+mail._domainkey:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: v=DKIM1\; k=rsa\; t=s\; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDhlbE056xp2xpON1iB2e22IEjFcJiWvFE39xweffgMusXoJzKnKeA/mOf2tLdftf9YuMu2wcGn5GOZlvsV7dHgjPIyFz1G6DhabljllfvAYrzzg0Cqg5DQsorkSXp8T2/bG0IT0mMwLJZDe0LBKoFgV/RPvimqZhDBfbzcmHSVhQIDAQAB
+mail._domainkey.automations:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: v=DKIM1\; k=rsa\; t=s\; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDEb5N5XBso7mfPa9w+3j49Ht3ZVR2vb3ZK6CtUtIlQClRoCkIR20ZgpPW7XkSUSHgzQ6wOGQNPHV36Hn1OC4DJ5VSvptQS+MF175+t4Q8tnLKJ8JM4raz6G9yb330lyFbgYrGVfV3NF1Z4OQDVGozJu4q4Zp2nJbf82Jovan4hMwIDAQAB
+mz7144.mail:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: uc6vfc02k4flcv3pktc70.mailazy.net.
+ogvwosn4cnlu:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: Google Search Console verification
+  ttl: 300
+  type: CNAME
+  value: gv-vl6boor5v4ibhf.dv.googlehosted.com.
+okta-oauth-experiments.sandbox:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: dev-89714694.customdomains.okta.com.
+openpgpkey:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: wkd.keys.openpgp.org.
+opensource:
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: MX
+  values:
+  - exchange: route2.mx.cloudflare.net.
+    preference: 75
+  - exchange: route1.mx.cloudflare.net.
+    preference: 89
+  - exchange: route3.mx.cloudflare.net.
+    preference: 97
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: v=spf1 include:_spf.mx.cloudflare.net ~all
+org-site-nodejs.archives:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: recaptime-about-page.pages.dev.
+policies:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: readthedocs.io.
+radar:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: keybase:radarbot
+  ttl: 300
+  type: TXT
+  value: keybase-site-verification=ZDL2QMd3mlntVSD44KZLEif4vX3HLYex23WAKs50XEM
+readme-stats-github.api:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: cname.vercel-dns.com.
+releases:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: public.r2.dev.
+requests:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: recaptime-requestslink.darkcustomdomain.com.
+resend._domainkey.noreply:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: DKIM for resend.com
+  ttl: 300
+  type: TXT
+  value: p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPBjnQmSoZKkBvacSK6BmyIAK3HFXFWmAp7SLDi3JuVJsgU52KyVCQRYcLCNq/MRZZziAuldwqhNE+J/eoixo/ocgkiQKBczWZgar+ftr1b2ne4OW4+7Gz5eNDYEMBJXW27NBnQB6pO2FObHCqWctIVlDZHW/aEFD537flI69GOwIDAQAB
+server.mirrors:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: atlassian-sending-domain-verification=cc2d7767-e605-4411-8db9-62777d1a04b5
+service-accounts:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: '@rtapp_bot@keybase.io'
+  ttl: 300
+  type: TXT
+  value: keybase-site-verification=GH-tjabsci4Z-AkFrx9MpgInY7y0c2B6uUhkltAKWbM
+sso.crew:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: eu.kinde.com.
+status:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: recaptime.github.io.
+support:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: custom.crisp.help.
+support.mail:
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: MX
+  value:
+    exchange: inbound.crisp.email.
+    preference: 10
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: v=spf1 redirect=_spf.crisp.email
+thirdparty.sso:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: eu.kinde.com.
+tsnet-proxy.api:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      proxied: true
+  ttl: 300
+  type: AAAA
+  value: '100::'
+vault:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: 407aa51e-9199-4aeb-9401-c68868ba83de.cname.koyeb.app.
+verify.cdn:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: rtapp-verify-cdn.netlify.app.
+wiki:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: mw-lb.miraheze.org.
+wiki.internal:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: ghs.googlehosted.com.

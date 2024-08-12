@@ -1,0 +1,256 @@
+---
+? ''
+: - octodns:
+      cloudflare:
+        auto-ttl: true
+    ttl: 300
+    type: ALIAS
+    value: lorebooks-wiki.netlify.app.
+  - octodns:
+      cloudflare:
+        auto-ttl: true
+    ttl: 300
+    type: MX
+    values:
+    - exchange: route1.mx.cloudflare.net.
+      preference: 20
+    - exchange: route3.mx.cloudflare.net.
+      preference: 49
+    - exchange: route2.mx.cloudflare.net.
+      preference: 63
+  - octodns:
+      cloudflare:
+        auto-ttl: true
+    ttl: 300
+    type: TXT
+    values:
+    - keybase-site-verification=pjVwKAYJSSlKawcYqv0G5yVz7fHG3aY7Df5elx-7-5o
+    - v=spf1 include:_spf.mx.cloudflare.net ~all
+3px7gcqyjwnj:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: gv-gozbfpjzyp6jef.dv.googlehosted.com.
+'*':
+  - octodns:
+      cloudflare:
+        auto-ttl: true
+        comment: wildcard proxyparty redirect via GCP
+    ttl: 300
+    type: A
+    value: "34.121.49.227"
+  - octodns:
+      cloudflare:
+        auto-ttl: true
+        comment: wildcard proxyparty redirect via GCP
+    ttl: 300
+    type: AAAA
+    value: "2600:1900:4001:b0b::"
+'*.beta':
+  - octodns:
+      cloudflare:
+        auto-ttl: true
+        comment: wildcard proxyparty redirect via GCP
+    ttl: 300
+    type: A
+    value: "34.121.49.227"
+  - octodns:
+      cloudflare:
+        auto-ttl: true
+        comment: wildcard proxyparty redirect via GCP
+    ttl: 300
+    type: AAAA
+    value: "2600:1900:4001:b0b::"
+'*._domainkey':
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: v=DKIM1\; p=
+'*.archive':
+  ttl: 60
+  type: CNAME
+  value: lorebooks-archives-landing.netlify.app.
+_dmarc:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: v=DMARC1\; p=reject\; sp=reject\; adkim=s\; aspf=s\; rua=mailto:ajhalili2006@recaptime.eu.org
+_github-challenge-internal-recaptime-dev-org.squad:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: gh-org:recaptimedev-internal
+  ttl: 300
+  type: TXT
+  value: ad5170d13e
+_github-challenge-lorebooks-wiki-org:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: github:@lorebooks-wiki
+  ttl: 300
+  type: TXT
+  value: 6fe19a58ee
+_github-pages-challenge-lorebooks-wiki:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: github-pages:@lorebooks-wiki
+  ttl: 300
+  type: TXT
+  value: 05753ad42f247c3d7e418bf1c1be46
+atlassian-379db9._domainkey.jira:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: atlassian-379db9.dkim.atlassian.net.
+atlassian-bounces.jira:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: bounces.mail-us.atlassian.net.
+atlassian-ecca4a._domainkey.jira:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: atlassian-ecca4a.dkim.atlassian.net.
+comments:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: vercel.com/recaptime-dev/comments-app
+  ttl: 300
+  type: CNAME
+  value: cname.vercel-dns.com.
+hut-pages.experiments:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: pages.sr.ht.
+internal.squad:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wikijs in railway.app
+  ttl: 300
+  type: CNAME
+  value: 5vtn604a.up.railway.app.
+jira:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: atlassian-sending-domain-verification=87481853-6f91-49be-90c0-c829f532abdd
+m1._domainkey.notify:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: m1.domainkey.ucig5l13257huo1pug5q0.mailazy.net.
+m2._domainkey.notify:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: m2.domainkey.ucig5l13257huo1pug5q0.mailazy.net.
+mkdocs-material.templates:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: lorebooks-wiki.github.io.
+mssavow3lliv:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: Google Search Console verification
+  ttl: 300
+  type: CNAME
+  value: gv-a3gwkxmx5rsdm7.dv.googlehosted.com.
+multiverse:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: multifandom-multiverse-wiki.pages.dev.
+mz9069.notify:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: ucig5l13257huo1pug5q0.mailazy.net.
+sig1._domainkey.support:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: sig1.dkim.support.lorebooks.eu.org.at.icloudmailadmin.com.
+squad:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: recaptime-squad-wiki.netlify.app.
+stats:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: 4c6y3lyl.up.railway.app.
+support:
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: MX
+  values:
+  - exchange: mx01.mail.icloud.com.
+    preference: 10
+  - exchange: mx02.mail.icloud.com.
+    preference: 10
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  values:
+  - apple-domain=f84vZlpc5tAZv5DI
+  - v=spf1 include:icloud.com ~all
+updates:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: ghs.google.com.
+www:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: lorebooks-wiki.netlify.app.
