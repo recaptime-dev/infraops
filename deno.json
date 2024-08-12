@@ -4,7 +4,9 @@
         "run-dotenvx": "deno run -A npm:@dotenvx/dotenvx run",
         "secret:get": "deno run -A npm:@dotenvx/dotenvx get",
         "secret:set": "deno task dotenvx set",
-        "setup": "./scripts/setup"
+        "setup": "./scripts/setup",
+        "dns:dryrun": "deno run -A npm:@dotenvx/dotenvx run -f .env.ci -- pipenv run dns-dryrun",
+        "dns:apply": "deno run -A npm:@dotenvx/dotenvx run -f .env.ci -- pipenv run dns-apply"
     },
     "nodeModulesDir": true
 }

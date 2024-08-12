@@ -1,0 +1,38 @@
+#!/usr/bin/env -S deno run -A
+import { assert } from "jsr:@std/assert";
+
+console.log("[stage 0] Installing pipenv into user environment...")
+const pipenvSetup = await new Deno.Command("pip3", {
+    args: [
+        "install",
+        "--user",
+        "pipenv"
+    ]
+}).output()
+
+if (pipenvSetup.code === 0) {
+    console.log(new TextDecoder().decode(pipenvSetup.stdout));
+} else {
+    console.log(new TextDecoder().decode(pipenvSetup.stderr));
+    throw new Error(new TextDecoder().decode(pipenvSetup.stderr))
+}
+
+console.log("[stage 1] Installing dependencies from Pipfile")
+const installDeps = await new Deno.Command("pipenv", {
+    args: ["install"]
+}).output()
+
+if (installDeps.code === 0) {
+  console.log(new TextDecoder().decode(installDeps.stdout));
+} else {
+  console.log(new TextDecoder().decode(installDeps.stderr));
+  throw new Error(new TextDecoder().decode(installDeps.stderr));
+}
+
+try {
+    const data = await Deno.lstatSync(".env.keys")
+    assert(data.isFile)
+    console.log("[info] .env.keys exists")
+} catch (_err) {
+    console.warn("[warning] .env.keys does not exist on your side, ask an admin for help")
+}

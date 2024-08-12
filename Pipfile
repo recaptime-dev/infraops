@@ -11,3 +11,7 @@ octodns-cloudflare = {editable = true, ref = "bcaa09c974ce81d7497a2fdfa5c214ab75
 
 [requires]
 python_version = "3.12"
+
+[scripts]
+dns-dryrun = "octodns-sync --config-file=./octodns-config.yml"
+dns-apply = "octodns-sync --config-file=./octodns-config.yml --doit"
