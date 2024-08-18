@@ -1,0 +1,48 @@
+---
+? ''
+: octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: ALIAS
+  value: lorebooks-wiki.netlify.app.
+
+'*':
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: proxyparty.recaptime.dev.
+
+'*.beta':
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: proxyparty.recaptime.dev.
+
+'*.templates':
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: lorebooks-wiki.github.io.
+
+updates:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: ghs.google.com.
+
+www:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: lorebooks-wiki.netlify.app.

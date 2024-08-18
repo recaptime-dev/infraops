@@ -1,4 +1,6 @@
 ---
+
+# Main website
 ? ''
 : - octodns:
       cloudflare:
@@ -31,21 +33,25 @@
     - hosted-email-verify=n5g5w5tn
     - 'mailru-domain: j2Kcy7D6miihgSvs'
     - v=spf1 include:spf.migadu.com include:_spf.mail.ru -all
+
+# wildcard redirects on proxyparty
 '*':
-  - octodns:
-      cloudflare:
-        auto-ttl: true
-        comment: wildcard proxyparty redirect via GCP
-    ttl: 300
-    type: A
-    value: "34.121.49.227"
-  - octodns:
-      cloudflare:
-        auto-ttl: true
-        comment: wildcard proxyparty redirect via GCP
-    ttl: 300
-    type: AAAA
-    value: "2600:1900:4001:b0b::"
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wildcard proxyparty redirect via GCP
+  ttl: 300
+  type: A
+  value: 34.121.49.227
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wildcard proxyparty redirect via GCP
+  ttl: 300
+  type: AAAA
+  value: '2600:1900:4001:b0b::'
+
+# Kinde setup?
 _acme-challenge.kinde:
   octodns:
     cloudflare:
@@ -53,6 +59,8 @@ _acme-challenge.kinde:
   ttl: 300
   type: CNAME
   value: _acme-challenge.fcd926e18a6b6dcacdd30625e8465750.recaptimesquad.kinde.com.
+
+# Bluesky profile verification
 _atproto:
   octodns:
     cloudflare:
@@ -60,6 +68,8 @@ _atproto:
   ttl: 300
   type: TXT
   value: did=did:plc:i5m7ags2eqs5zras4cg2xkll
+
+# Discord profile verification: @recaptimesquad
 _discord:
   octodns:
     cloudflare:
@@ -74,6 +84,8 @@ _discord.crew:
   ttl: 300
   type: TXT
   value: dh=77541ff31c1ea5d2a5291d65a65d1c79585df91d
+
+# DMARC settings
 _dmarc:
   octodns:
     cloudflare:
@@ -88,6 +100,8 @@ _dmarc.crew:
   ttl: 300
   type: TXT
   value: v=DMARC1\; p=quarantine\;
+
+# Doppler
 _doppler_rybihrasd8pvj.crew:
   octodns:
     cloudflare:
@@ -95,6 +109,8 @@ _doppler_rybihrasd8pvj.crew:
   ttl: 300
   type: TXT
   value: 4uqkDSUgVJaExHFBh0hklZZ8PPMyJg4l
+
+# GitHub
 _gh-recaptime-dev-o:
   octodns:
     cloudflare:
@@ -111,20 +127,8 @@ _gh-recaptime-dev-o.crew:
   ttl: 300
   type: TXT
   value: a992c80842
-_sip._tls.crew:
-  type: SRV
-  value:
-    port: 443
-    priority: 100
-    target: sipdir.online.lync.com.
-    weight: 1
-_sipfederationtls._tcp.crew:
-  type: SRV
-  value:
-    port: 5061
-    priority: 100
-    target: sipfed.online.lync.com.
-    weight: 1
+
+# vercel verification challenges
 _vercel:
   octodns:
     cloudflare:
@@ -132,6 +136,8 @@ _vercel:
   ttl: 300
   type: TXT
   value: vc-domain-verify=comments.recaptime.dev,3c4c5d59d3fffcca3bd1
+
+# giscus
 comments:
   octodns:
     cloudflare:
@@ -140,7 +146,23 @@ comments:
   ttl: 300
   type: CNAME
   value: cname.vercel-dns.com.
+
+# crew.recaptime.dev email address and stuff
 crew:
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wildcard proxyparty redirect via GCP
+  ttl: 300
+  type: A
+  value: 34.121.49.227
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wildcard proxyparty redirect via GCP
+  ttl: 300
+  type: AAAA
+  value: '2600:1900:4001:b0b::'
 - octodns:
     cloudflare:
       auto-ttl: true
@@ -160,50 +182,8 @@ crew:
   - atlassian-domain-verification=Beg4N1aB/9owCmMnPt/WuGmkv7pyEjBmr8V5ICzgzAOf5hFhrLoGU7P92dFMIlYv
   - hosted-email-verify=u04k0bzq
   - v=spf1 include:spf.migadu.com include:_spf.mail.ru ~all
-- octodns:
-    cloudflare:
-      auto-ttl: true
-      comment: wildcard proxyparty redirect via GCP
-  ttl: 300
-  type: A
-  value: "34.121.49.227"
-- octodns:
-    cloudflare:
-      auto-ttl: true
-      comment: wildcard proxyparty redirect via GCP
-  ttl: 300
-  type: AAAA
-  value: "2600:1900:4001:b0b::"
-proxyparty:
-- octodns:
-    cloudflare:
-      auto-ttl: true
-      comment: wildcard proxyparty redirect via GCP
-  ttl: 300
-  type: A
-  value: "34.121.49.227"
-- octodns:
-    cloudflare:
-      auto-ttl: true
-      comment: wildcard proxyparty redirect via GCP
-  ttl: 300
-  type: AAAA
-  value: "2600:1900:4001:b0b::"
-proxypartylab:
-- octodns:
-    cloudflare:
-      auto-ttl: true
-      comment: wildcard proxyparty redirect via GCP
-  ttl: 300
-  type: A
-  value: "34.121.49.227"
-- octodns:
-    cloudflare:
-      auto-ttl: true
-      comment: wildcard proxyparty redirect via GCP
-  ttl: 300
-  type: AAAA
-  value: "2600:1900:4001:b0b::"
+
+# gitbook-hosted docs
 docs:
   octodns:
     cloudflare:
@@ -212,6 +192,8 @@ docs:
   ttl: 300
   type: CNAME
   value: c045ef9fc2-hosting.gitbook.io.
+
+# hashnode
 hashnode:
   octodns:
     cloudflare:
@@ -219,14 +201,8 @@ hashnode:
   ttl: 300
   type: CNAME
   value: hashnode.network.
-issues:
-  octodns:
-    cloudflare:
-      auto-ttl: true
-      proxied: true
-  ttl: 300
-  type: CNAME
-  value: 98d84c58-6a81-4558-be7d-877c6528b8c3.cfargotunnel.com.
+
+# migadu dkim setup
 key1._domainkey:
   octodns:
     cloudflare:
@@ -273,6 +249,7 @@ key3._domainkey.crew:
   ttl: 300
   type: CNAME
   value: key3.crew.recaptime.dev._domainkey.migadu.com.
+
 kinde:
   octodns:
     cloudflare:
@@ -290,6 +267,8 @@ openpgpkey:
   ttl: 300
   type: CNAME
   value: wkd.keys.openpgp.org.
+
+# squad policies
 policies:
   octodns:
     cloudflare:
@@ -297,6 +276,41 @@ policies:
   ttl: 300
   type: CNAME
   value: readthedocs.io.
+
+## proxyparty
+proxyparty:
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wildcard proxyparty redirect via GCP
+  ttl: 300
+  type: A
+  value: 34.121.49.227
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wildcard proxyparty redirect via GCP
+  ttl: 300
+  type: AAAA
+  value: '2600:1900:4001:b0b::'
+
+proxypartylab:
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wildcard proxyparty redirect via GCP
+  ttl: 300
+  type: A
+  value: 34.121.49.227
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wildcard proxyparty redirect via GCP
+  ttl: 300
+  type: AAAA
+  value: '2600:1900:4001:b0b::'
+
+# resend.io
 resend._domainkey.notifications:
   octodns:
     cloudflare:
@@ -319,9 +333,8 @@ send.notifications:
   ttl: 300
   type: TXT
   value: v=spf1 include:amazonses.com ~all
-sip.crew:
-  type: CNAME
-  value: sipdir.online.lync.com.
+
+# gitbook-hosted support page
 support:
   octodns:
     cloudflare:
@@ -329,6 +342,8 @@ support:
   ttl: 300
   type: CNAME
   value: c045ef9fc2-hosting.gitbook.io.
+
+# ledger / web3 treasury stuff
 treasury:
   octodns:
     cloudflare:
@@ -343,6 +358,8 @@ vault:
   ttl: 300
   type: CNAME
   value: 407aa51e-9199-4aeb-9401-c68868ba83de.cname.koyeb.app.
+
+# squad wiki
 wiki:
   octodns:
     cloudflare:
@@ -350,6 +367,8 @@ wiki:
   ttl: 300
   type: CNAME
   value: recaptime-squad-wiki.netlify.app.
+
+# YouTrack Cloud instance
 youtrack:
   octodns:
     cloudflare:

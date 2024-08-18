@@ -6,18 +6,19 @@ providers:
   cf-prod:
     class: octodns_cloudflare.CloudflareProvider
     account_id: "33e6189a4a87f1923e71af8da171e2ed"
-    email: env/CLOUDFLARE_EMAIL
-    token: env/CLOUDFLARE_GLOBAL_API_KEY
+    token: env/CLOUDFLARE_TOKEN
     #main_ttl: 120
   cf-sandbox:
     class: octodns_cloudflare.CloudflareProvider
     account_id: "dfa4ffaeef6265e4a8d18cffc5239754"
-    email: env/CLOUDFLARE_EMAIL
-    token: env/CLOUDFLARE_GLOBAL_API_KEY
+    token: env/CLOUDFLARE_TOKEN
     #main_ttl: 120
 
 zones:
   recaptime.dev.:
+    sources: [config]
+    targets: [cf-prod]
+  lorebooks.wiki.:
     sources: [config]
     targets: [cf-prod]
   recaptime.eu.org.:

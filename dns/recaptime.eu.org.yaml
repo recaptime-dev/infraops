@@ -54,21 +54,23 @@
     - 'mailru-domain: YftE9VeuZ2EZTPbu'
     - v=spf1 include:_spf.mx.cloudflare.net ~all
     - 'yandex-verification: 0d2fdb26bfcf7aa1'
+
 '*':
-  - octodns:
-      cloudflare:
-        auto-ttl: true
-        comment: wildcard proxyparty redirect via GCP
-    ttl: 300
-    type: A
-    value: "34.121.49.227"
-  - octodns:
-      cloudflare:
-        auto-ttl: true
-        comment: wildcard proxyparty redirect via GCP
-    ttl: 300
-    type: AAAA
-    value: "2600:1900:4001:b0b::"
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wildcard proxyparty redirect via GCP
+  ttl: 300
+  type: A
+  value: 34.121.49.227
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wildcard proxyparty redirect via GCP
+  ttl: 300
+  type: AAAA
+  value: '2600:1900:4001:b0b::'
+
 _acme-challenge.cla:
   octodns:
     cloudflare:
@@ -707,13 +709,7 @@ verify.cdn:
   ttl: 300
   type: CNAME
   value: rtapp-verify-cdn.netlify.app.
-wiki:
-  octodns:
-    cloudflare:
-      auto-ttl: true
-  ttl: 300
-  type: CNAME
-  value: mw-lb.miraheze.org.
+
 wiki.internal:
   octodns:
     cloudflare:
