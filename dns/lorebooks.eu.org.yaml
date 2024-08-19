@@ -1,3 +1,6 @@
+# This is the DNS records for our old domain under nic.eu.org, although
+# it has been deprecated in favor of lorebooks.wiki.
+
 ---
 ? ''
 : - octodns:
@@ -77,7 +80,7 @@ _dmarc:
       auto-ttl: true
   ttl: 300
   type: TXT
-  value: v=DMARC1\; p=reject\; sp=reject\; adkim=s\; aspf=s\; rua=mailto:ajhalili2006@recaptime.eu.org
+  value: v=DMARC1\; p=reject\; sp=reject\; adkim=s\; aspf=s\;
 
 # GitHub
 _github-challenge-internal-recaptime-dev-org.squad:
@@ -105,29 +108,6 @@ _github-pages-challenge-lorebooks-wiki:
   type: TXT
   value: 05753ad42f247c3d7e418bf1c1be46
 
-# Arlassian
-atlassian-379db9._domainkey.jira:
-  octodns:
-    cloudflare:
-      auto-ttl: true
-  ttl: 300
-  type: CNAME
-  value: atlassian-379db9.dkim.atlassian.net.
-atlassian-bounces.jira:
-  octodns:
-    cloudflare:
-      auto-ttl: true
-  ttl: 300
-  type: CNAME
-  value: bounces.mail-us.atlassian.net.
-atlassian-ecca4a._domainkey.jira:
-  octodns:
-    cloudflare:
-      auto-ttl: true
-  ttl: 300
-  type: CNAME
-  value: atlassian-ecca4a.dkim.atlassian.net.
-
 # giscus
 comments:
   octodns:
@@ -138,7 +118,33 @@ comments:
   type: CNAME
   value: cname.vercel-dns.com.
 
-# Experiments?
+# Project: hello
+# Description: hello lorebooks.wiki!
+# Maintainers: ajhalili2006
+deno.hello:
+- octodns:
+    cloudflare:
+      comment: "Managed by recaptime-dev"
+  ttl: 300
+  type: A
+  value: "34.120.54.55"
+- octodns:
+    cloudflare:
+      comment: "Managed by recaptime-dev"
+  ttl: 300
+  type: AAAA
+  value: "2600:1901:0:6d85::"
+_acme-challenge.deno.hello:
+  octodns:
+    cloudflare:
+      comment: "Managed by recaptime-dev"
+  ttl: 300
+  type: CNAME
+  value: "d2b325c1c3a7a45994130d36._acme.deno.dev."
+
+# Project: experiments
+# Description: Experiments with different static site hosting services
+# Maintainer: ajhalili2006
 hut-pages.experiments:
   octodns:
     cloudflare:
@@ -147,27 +153,6 @@ hut-pages.experiments:
   type: CNAME
   value: pages.sr.ht.
 
-jira:
-  octodns:
-    cloudflare:
-      auto-ttl: true
-  ttl: 300
-  type: TXT
-  value: atlassian-sending-domain-verification=87481853-6f91-49be-90c0-c829f532abdd
-m1._domainkey.notify:
-  octodns:
-    cloudflare:
-      auto-ttl: true
-  ttl: 300
-  type: CNAME
-  value: m1.domainkey.ucig5l13257huo1pug5q0.mailazy.net.
-m2._domainkey.notify:
-  octodns:
-    cloudflare:
-      auto-ttl: true
-  ttl: 300
-  type: CNAME
-  value: m2.domainkey.ucig5l13257huo1pug5q0.mailazy.net.
 
 mssavow3lliv:
   octodns:
@@ -194,34 +179,6 @@ mz9069.notify:
   ttl: 300
   type: CNAME
   value: ucig5l13257huo1pug5q0.mailazy.net.
-
-sig1._domainkey.support:
-  octodns:
-    cloudflare:
-      auto-ttl: true
-  ttl: 300
-  type: CNAME
-  value: sig1.dkim.support.lorebooks.eu.org.at.icloudmailadmin.com.
-
-support:
-- octodns:
-    cloudflare:
-      auto-ttl: true
-  ttl: 300
-  type: MX
-  values:
-  - exchange: mx01.mail.icloud.com.
-    preference: 10
-  - exchange: mx02.mail.icloud.com.
-    preference: 10
-- octodns:
-    cloudflare:
-      auto-ttl: true
-  ttl: 300
-  type: TXT
-  values:
-  - apple-domain=f84vZlpc5tAZv5DI
-  - v=spf1 include:icloud.com ~all
 
 updates:
   octodns:
