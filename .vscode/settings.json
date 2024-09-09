@@ -9,5 +9,14 @@
         "github-actions",
         "global"
     ],
-    "deno.enable": true
+    "deno.enable": true,
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-issue-config.json": ".github/ISSUE_TEMPLATE/config.yml"
+    },
+    "gitlens.autolinks": [
+        {
+            "prefix": "INFRA-",
+            "url": "https://youtrack.recaptime.dev/issue/INFRA-<num>"
+        }
+    ]
 }

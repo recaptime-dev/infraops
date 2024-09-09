@@ -1,0 +1,11 @@
+#yaml-language-server: $schema=https://json.schemastore.org/github-issue-config.json
+blank_issues_enabled: false
+contact_links:
+  - name: lorebooks.wiki issue tracker
+    url: https://lorebooks.wiki/docs/issue-tracker
+    about: >
+      For requests and issues related to lorebooks.wiki domain service, please file a
+      issue in its own issue tracker.
+  - name: Squad Meta Issue Tracker
+    url: https://wiki.recaptime.dev/handbook/issue-trackers/meta
+    about: Please submit anything else to our meta issue tracker.

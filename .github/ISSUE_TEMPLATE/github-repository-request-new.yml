@@ -1,0 +1,69 @@
+name: Request to create or trasnfer GitHub repository into @recaptime-dev
+description: Use this form to request to create or transfer a repo into RecapTime.dev GitHub organization(s).
+title: '[repo-requests]:'
+body:
+  - type: textarea
+    id: aboutThisIssue
+    attributes:
+      label: About this issue
+      description: If you are transferring a repository into here, please mention it here.
+    validations:
+      required: true
+  - type: input
+    id: desiredSlug
+    attributes:
+      label: Desired repository slug
+      description: Only numbers, letters and dashes are accepted here.
+    validations:
+      required: true
+  - type: dropdown
+    id: org
+    attributes:
+      label: GitHub organization for this repo
+      description: >-
+        Please select @recaptime-dev for open-source projects or
+        @internal-recaptime-dev for internal projects. For other organizations,
+        please see the instructions above on how to fill this up.
+      options:
+        - recaptime-dev
+        - recaptimedev-community
+        - internal-recaptime-dev
+        - recaptimedev-labs
+        - lorebooks-wiki
+    validations:
+      required: true
+  - type: input
+    id: description
+    attributes:
+      label: Repository description
+  - type: input
+    id: tags
+    attributes:
+      label: Repository tags
+      description: >-
+        Please seperate them by commas and only numbers, letters and dashes are
+        accepted here.
+  - type: textarea
+    id: additionalUsers
+    attributes:
+      label: Permissions
+      description: >-
+        By default, you'll have maintainer permissions to the repository while
+        @recaptime-dev/squad-leads will have admin permissions.
+      value: >-
+        * **Read-only**:
+
+        * **Triagers**:
+
+        * **Committers**:
+
+        * **Maintainers**:
+
+        * **Admins/Owners**: <you can add yourself here if you need to add
+        repo-level secrets>
+  - type: markdown
+    attributes:
+      value: >-
+        ---
+
+        This template was generated with [Issue Forms Creator](https://issue-forms-creator.netlify.app)

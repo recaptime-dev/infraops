@@ -1,0 +1,25 @@
+name: Request GitHub organization admin support
+description: >-
+  Use this form for requesting help from an organization admin regarding your
+  repository. Not for debugging/code review unless it is CI related.
+title: '[repo-support]:'
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: About this issue
+      description: >-
+        Please describe your issue, and why you need a specific action from
+        someone with org admin permissions in GitHub.
+    validations:
+      required: true
+  - type: input
+    id: relatedIssues
+    attributes:
+      label: Related issues / Prior art
+      description: If none, feel free to skip this field.
+  - type: markdown
+    attributes:
+      value: >-
+        This template was generated with [Issue Forms
+        Creator](https://issue-forms-creator.netlify.app)
