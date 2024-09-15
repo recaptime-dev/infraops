@@ -5,9 +5,17 @@
 > You might prefer to [file a issue on the meta issue tracker](https://lorebooks.wiki/docs/issue-tracker) instead
 > unless you want to submit your DNS records for your documentation or wiki.
 
+We manage our Cloudflare DNS records as code for all of our domains through
+[OctoDNS](https://github.com/octodns/octodns) and manually ran by a human to
+ensure nothing go wrong.
+
 For the main configuration itself, see the [`./octodns-config.yml` file](../octodns-config.yml).
 
 ## Cookbooks for squad members
+
+For the `.env.keys` file, ask @ajhalili2006 by providing your GPG pubkey ID in order to
+decrypt via GPG. Please be reminded that you must notify anyone before you apply
+DNS changes.
 
 * Export DNS records into YAML: `pipenv run dns-export` (may lose YAML comments)
 * Load secrets into a fresh session `dotenvx run -f .env.ci -- pipenv shell`

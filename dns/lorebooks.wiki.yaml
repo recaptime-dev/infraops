@@ -8,12 +8,20 @@
   value: lorebooks-wiki.netlify.app.
 
 '*':
-  octodns:
+- octodns:
     cloudflare:
       auto-ttl: true
+      comment: wildcard proxyparty redirect via GCP
   ttl: 300
-  type: CNAME
-  value: proxyparty.recaptime.dev.
+  type: A
+  value: 34.121.49.227
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wildcard proxyparty redirect via GCP
+  ttl: 300
+  type: AAAA
+  value: '2600:1900:4001:b0b::'
 
 '*.beta':
   octodns:
@@ -22,6 +30,13 @@
   ttl: 300
   type: CNAME
   value: proxyparty.recaptime.dev.
+hackclub.beta:
+  octodns:
+    cloudflare:
+      comment: "Managed by ajhalili2006 on behalf of hackclub"
+  ttl: 300
+  type: CNAME
+  value: ajhalili2006.hackclub.app.
 
 '*.templates':
   octodns:
@@ -30,6 +45,119 @@
   ttl: 300
   type: CNAME
   value: lorebooks-wiki.github.io.
+
+# DO NOT TOUCH: GitHub organization verification records
+_gh-lorebooks-wiki-o:
+  octodns:
+    cloudflare:
+      comment: "github org verification"
+  ttl: "300"
+  type: TXT
+  value: "dd65821f06"
+_gh-lorebooks-wiki-o.beta:
+  octodns:
+    cloudflare:
+      comment: "github org verification"
+  ttl: "300"
+  type: TXT
+  value: "84bf35bbce"
+# DO NOT TOUCH: GitHub Pages verification
+_github-pages-challenge-lorebooks-wiki:
+  octodns:
+    cloudflare:
+      comment: "github pages verification"
+  ttl: 300
+  type: TXT
+  value: "2a22effdf86f737bc1a90f9d9d9120"
+_github-pages-challenge-lorebooks-wiki.beta:
+  octodns:
+    cloudflare:
+      comment: "github pages verification"
+  ttl: 300
+  type: TXT
+  value: "51a8f0224e55eb49a0b968e85ba1d9"
+
+# lorebooks.wiki APIs
+api:
+- octodns:
+    cloudflare:
+      comment: "Managed by recaptime-dev"
+  ttl: 300
+  type: A
+  value: 34.120.54.55
+- octodns:
+    cloudflare:
+      comment: "Managed by recaptime-dev"
+  ttl: 300
+  type: AAAA
+  value: "2600:1901:0:6d85::"
+_acme-challenge.api:
+  octodns:
+    cloudflare:
+      comment: "Managed by recaptime-dev"
+  ttl: 300
+  type: CNAME
+  value: "pending-id._acme.deno.dev."
+badges.api:
+- octodns:
+    cloudflare:
+      comment: "Managed by recaptime-dev"
+  ttl: 300
+  type: A
+  value: 34.120.54.55
+- octodns:
+    cloudflare:
+      comment: "Managed by recaptime-dev"
+  ttl: 300
+  type: AAAA
+  value: "2600:1901:0:6d85::"
+_acme-challenge.badges.api:
+  octodns:
+    cloudflare:
+      comment: "Managed by recaptime-dev"
+  ttl: 300
+  type: CNAME
+  value: "0d738b3d8fe48dd612acd44d._acme.deno.dev."
+
+# lorebooks.wiki CDN via Storj DCS
+# Generated with the following command:
+#  uplink share --dns cdn.lorebooks.wiki sj://lorebooks-wiki-cdn --not-after=none --tls
+cdn:
+  octodns:
+    cloudflare:
+      comment: "Managed by recaptime-dev"
+  ttl: 300
+  type: CNAME
+  value: "link.storjshare.io."
+txt-cdn:
+  octodns:
+    cloudflare:
+      comment: "Managed by recaptime-dev"
+  ttl: 300
+  type: TXT
+  value:
+  - "storj-root:lorebooks-wiki-cdn"
+  - "storj-access:jwvik3gmllcibuqruoq56dmyk44a"
+  - "storj-tls:true"
+# Generated with the following command:
+#  uplink share --dns meta.cdn.lorebooks.wiki sj://lorebooks-wiki-cdn/meta --not-after=none --tls
+meta.cdn:
+  octodns:
+    cloudflare:
+      comment: "Managed by recaptime-dev"
+  ttl: 300
+  type: CNAME
+  value: "link.storjshare.io."
+txt-meta.cdn:
+  octodns:
+    cloudflare:
+      comment: "Managed by recaptime-dev"
+  ttl: 300
+  type: TXT
+  value:
+  - "storj-root:lorebooks-wiki-cdn/meta"
+  - "storj-access:jwhphlawjl44d35irmfy32h2bzhq"
+  - "storj-tls:true"
 
 # Project: hello
 # Description: hello lorebooks.wiki!
@@ -55,13 +183,13 @@ _acme-challenge.deno.hello:
   type: CNAME
   value: "9a8dbd25e5f083266d95ed6d._acme.deno.dev."
 
-updates:
+hackclub:
   octodns:
     cloudflare:
-      auto-ttl: true
+      comment: "Managed by ajhalili2006 on behalf of hackclub"
   ttl: 300
   type: CNAME
-  value: ghs.google.com.
+  value: ajhalili2006.hackclub.app.
 
 www:
   octodns:

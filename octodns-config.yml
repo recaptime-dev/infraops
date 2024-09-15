@@ -1,0 +1,38 @@
+providers:
+  cf-prod:
+    account_id: 33e6189a4a87f1923e71af8da171e2ed
+    class: octodns_cloudflare.CloudflareProvider
+    delete_pcent_threshold: 0.25
+    token: env/CLOUDFLARE_TOKEN
+    update_pcent_threshold: 0.25
+  cf-sandbox:
+    account_id: dfa4ffaeef6265e4a8d18cffc5239754
+    class: octodns_cloudflare.CloudflareProvider
+    delete_pcent_threshold: 0.6
+    token: env/CLOUDFLARE_TOKEN
+    update_pcent_threshold: 0.6
+  config:
+    class: octodns.provider.yaml.YamlProvider
+    directory: ./dns
+    enforce_order: false
+zones:
+  lorebooks.eu.org.:
+    sources:
+      - config
+    targets:
+      - cf-prod
+  lorebooks.wiki.:
+    sources:
+      - config
+    targets:
+      - cf-prod
+  recaptime.dev.:
+    sources:
+      - config
+    targets:
+      - cf-prod
+  recaptime.eu.org.:
+    sources:
+      - config
+    targets:
+      - cf-prod
