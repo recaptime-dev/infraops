@@ -1,6 +1,12 @@
 name: Request to create or trasnfer GitHub repository into @recaptime-dev
 description: Use this form to request to create or transfer a repo into RecapTime.dev GitHub organization(s).
 title: '[repo-requests]:'
+assignees:
+- ajhalili2006
+labels:
+- github-admin-support
+- infra
+- repo-requests
 body:
   - type: textarea
     id: aboutThisIssue
@@ -22,14 +28,16 @@ body:
       label: GitHub organization for this repo
       description: >-
         Please select @recaptime-dev for open-source projects or
-        @internal-recaptime-dev for internal projects. For other organizations,
-        please see the instructions above on how to fill this up.
+        @internal-recaptime-dev for internal projects. For other organizations not
+        listed here, please mention it in the request notes (_Anything else?_).
       options:
         - recaptime-dev
         - recaptimedev-community
         - internal-recaptime-dev
         - recaptimedev-labs
         - lorebooks-wiki
+        - awesome-neurodiversity
+        - None of the above
     validations:
       required: true
   - type: input
@@ -61,6 +69,11 @@ body:
 
         * **Admins/Owners**: <you can add yourself here if you need to add
         repo-level secrets>
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      description: Mention the receiving organization here if none on the above org list.
   - type: markdown
     attributes:
       value: >-

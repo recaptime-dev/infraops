@@ -3,7 +3,20 @@ description: >-
   Use this form for requesting help from an organization admin regarding your
   repository. Not for debugging/code review unless it is CI related.
 title: '[repo-support]:'
+assignees:
+- ajhalili2006
+labels:
+- github-admin-support
+- infra
 body:
+  - type: input
+    id: repo
+    attributes:
+      label: Target repository for this request
+      description: Please use the full repository URL to help us triage this issue easily.
+      placeholder: https://github.com/recaptime-dev/repo-name
+    validations:
+      required: true
   - type: textarea
     id: description
     attributes:
@@ -13,7 +26,7 @@ body:
         someone with org admin permissions in GitHub.
     validations:
       required: true
-  - type: input
+  - type: textarea
     id: relatedIssues
     attributes:
       label: Related issues / Prior art

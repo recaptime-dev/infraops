@@ -33,5 +33,5 @@ By default, you'll be
 * **Maintainers**:
 
 /assign @ajhalili2006
-/label ~"Access Requests" ~"infra" ~"Repository-related requests"
+/label ~"Access Requests" ~"infra" ~"Repository-related requests" ~"GitLab Admin Support"
 /cc @recaptime-dev/gitlab-admins @recaptime-dev/squad-leads
