@@ -61,15 +61,8 @@
       auto-ttl: true
       comment: wildcard proxyparty redirect via GCP
   ttl: 300
-  type: A
-  value: 34.121.49.227
-- octodns:
-    cloudflare:
-      auto-ttl: true
-      comment: wildcard proxyparty redirect via GCP
-  ttl: 300
-  type: AAAA
-  value: '2600:1900:4001:b0b::'
+  type: CNAME
+  value: proxyparty.recaptime.dev.
 
 _acme-challenge.cla:
   octodns:

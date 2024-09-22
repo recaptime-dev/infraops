@@ -9,7 +9,7 @@ We manage our Cloudflare DNS records as code for all of our domains through
 [OctoDNS](https://github.com/octodns/octodns) and manually ran by a human to
 ensure nothing go wrong.
 
-For the main configuration itself, see the [`./octodns-config.yml` file](../octodns-config.yml).
+For the main configuration itself, see the [`../octodns-config.yml` file](../octodns-config.yml).
 
 ## Cookbooks for squad members
 

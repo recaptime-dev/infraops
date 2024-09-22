@@ -34,18 +34,19 @@
 "*":
   - octodns:
       cloudflare:
-        auto-ttl: true
         comment: wildcard proxyparty redirect via GCP
-    ttl: 300
+    ttl: 150
     type: A
-    value: 34.121.49.227
+    value: 34.46.28.111
   - octodns:
       cloudflare:
-        auto-ttl: true
         comment: wildcard proxyparty redirect via GCP
-    ttl: 300
+    ttl: 150
     type: AAAA
-    value: "2600:1900:4001:b0b::"
+    value: "2600:1900:4001:b0b:0:1:0:0"
+  - ttl: 300
+    type: TXT
+    value: ajhalili2006
 "*.dom":
   - octodns:
       cloudflare:
@@ -131,6 +132,20 @@ _vercel:
   ttl: 300
   type: TXT
   value: vc-domain-verify=comments.recaptime.dev,3c4c5d59d3fffcca3bd1
+accounts:
+- ttl: 300
+  type: CNAME
+  value: 7hp0zh5h.up.railway.app.
+blog:
+- ttl: 300
+  type: A
+  value: 37.27.51.34
+- ttl: 300
+  type: AAAA
+  value: "2a01:4f9:3081:399c::4"
+- ttl: 300
+  type: TXT
+  value: domain-verification=ajhalili2006
 comments:
   octodns:
     cloudflare:
@@ -142,18 +157,16 @@ comments:
 crew:
   - octodns:
       cloudflare:
-        auto-ttl: true
         comment: wildcard proxyparty redirect via GCP
-    ttl: 300
+    ttl: 150
     type: A
-    value: 34.121.49.227
+    value: 34.46.28.111
   - octodns:
       cloudflare:
-        auto-ttl: true
         comment: wildcard proxyparty redirect via GCP
-    ttl: 300
+    ttl: 150
     type: AAAA
-    value: "2600:1900:4001:b0b::"
+    value: "2600:1900:4001:b0b:0:1:0:0"
   - octodns:
       cloudflare:
         auto-ttl: true
@@ -251,6 +264,14 @@ kinde:
 lyncdiscover.crew:
   type: CNAME
   value: webdir.online.lync.com.
+notepad:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: HedgeDoc instance on Nest
+  ttl: 300
+  type: CNAME
+  value: ajhalili2006.hackclub.app.
 openpgpkey:
   octodns:
     cloudflare:
@@ -268,33 +289,16 @@ policies:
 proxyparty:
   - octodns:
       cloudflare:
-        auto-ttl: true
         comment: wildcard proxyparty redirect via GCP
-    ttl: 300
+    ttl: 150
     type: A
-    value: 34.121.49.227
+    value: 34.46.28.111
   - octodns:
       cloudflare:
-        auto-ttl: true
         comment: wildcard proxyparty redirect via GCP
-    ttl: 300
+    ttl: 150
     type: AAAA
-    value: "2600:1900:4001:b0b::"
-proxypartylab:
-  - octodns:
-      cloudflare:
-        auto-ttl: true
-        comment: wildcard proxyparty redirect via GCP
-    ttl: 300
-    type: A
-    value: 34.121.49.227
-  - octodns:
-      cloudflare:
-        auto-ttl: true
-        comment: wildcard proxyparty redirect via GCP
-    ttl: 300
-    type: AAAA
-    value: "2600:1900:4001:b0b::"
+    value: "2600:1900:4001:b0b:0:1:0:0"
 resend._domainkey.notifications:
   octodns:
     cloudflare:

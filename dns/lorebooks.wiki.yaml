@@ -13,23 +13,9 @@
       auto-ttl: true
       comment: wildcard proxyparty redirect via GCP
   ttl: 300
-  type: A
-  value: 34.121.49.227
-- octodns:
-    cloudflare:
-      auto-ttl: true
-      comment: wildcard proxyparty redirect via GCP
-  ttl: 300
-  type: AAAA
-  value: '2600:1900:4001:b0b::'
-
-'*.beta':
-  octodns:
-    cloudflare:
-      auto-ttl: true
-  ttl: 300
   type: CNAME
   value: proxyparty.recaptime.dev.
+
 hackclub.beta:
   octodns:
     cloudflare:
