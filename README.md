@@ -8,17 +8,19 @@ support requests.
 
 ## Issue Tracker
 
-Identifier: `INFRA`
+Internal issue tracker ID: `INFRA`
 
 * **Internal issue tracker**: <https://youtrack.recaptime.dev/projects/1da5b766-9ff2-40c4-867e-419f6da08910> (ping @ajhalili2006
 for access, although due to free tier limitations we may need to adjust stuff)
 * **GitLab**: <https://mau.dev/recaptime-dev/infraops/issues> (formerly
 <https://mau.dev/recaptime-dev/infra/issue-tracker/issues>)
-* **GitHub**: <https://github.com/recaptime-dev/infraops>
+* **GitHub**: <https://github.com/recaptime-dev/infraops/issues>
 
 ## What's inside?
 
+* [`.github/ISSUE_TEMPLATE`](.github/ISSUE_TEMPLATE/) - GitHub Issue forms
 * [`.gitlab/issue_templates`](.gitlab/issue_templates) - Issue description templates for GitLab
+* [`devenv]
 * [`dns`](./dns) - DNS records, managed by octodns
 
 ## License

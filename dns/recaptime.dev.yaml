@@ -322,10 +322,18 @@ send.notifications:
     ttl: 300
     type: TXT
     value: v=spf1 include:amazonses.com ~all
+sso.crew:
+  ttl: 300
+  type: CNAME
+  value: recaptimesquad-cd-gjiq8iudghbg4i3w.edge.tenants.eu.auth0.com.
 support:
   octodns:
     cloudflare:
       auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: c045ef9fc2-hosting.gitbook.io.
+transparency:
   ttl: 300
   type: CNAME
   value: c045ef9fc2-hosting.gitbook.io.
