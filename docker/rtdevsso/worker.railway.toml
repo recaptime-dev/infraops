@@ -1,4 +1,0 @@
-[build]
-builder = "DOCKERFILE"
-dockerfilePath = "worker.Dockerfile"
-watchPatterns = ["docker-compose.yml","worker.railway.toml","worker.Dockerfile", ".env.production"]
