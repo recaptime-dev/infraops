@@ -3,9 +3,28 @@
 : octodns:
     cloudflare:
       auto-ttl: true
+      proxied: true
   ttl: 300
   type: ALIAS
-  value: lorebooks-wiki.netlify.app.
+  value: lorebooks-wiki.pages.dev.
+home:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: lorebooks-wiki.pages.dev.
+
+# recaptime-dev
+squad:
+  octodns:
+      cloudflare:
+        auto-ttl: true
+        proxied: true
+  ttl: 300
+  type: CNAME
+  value: recaptimedev-wiki.pages.dev.
 
 '*':
 - octodns:
@@ -184,3 +203,12 @@ www:
   ttl: 300
   type: CNAME
   value: lorebooks-wiki.netlify.app.
+
+# zulip-archive
+'*.zulip-archive':
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: lorebooks-wiki.github.io.

@@ -702,7 +702,14 @@ verify.cdn:
   ttl: 300
   type: CNAME
   value: rtapp-verify-cdn.netlify.app.
-
+wiki:
+  octodns:
+      cloudflare:
+        auto-ttl: true
+        proxied: true
+  ttl: 300
+  type: CNAME
+  value: recaptimedev-wiki.pages.dev.
 wiki.internal:
   octodns:
     cloudflare:

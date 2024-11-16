@@ -6,9 +6,10 @@
 : - octodns:
       cloudflare:
         auto-ttl: true
+        proxied: true
     ttl: 300
     type: ALIAS
-    value: lorebooks-wiki.netlify.app.
+    value: lorebooks-wiki.pages.dev.
   - octodns:
       cloudflare:
         auto-ttl: true
@@ -153,6 +154,15 @@ mz9069.notify:
   ttl: 300
   type: CNAME
   value: ucig5l13257huo1pug5q0.mailazy.net.
+
+squad:
+  octodns:
+      cloudflare:
+        auto-ttl: true
+        proxied: true
+  ttl: 300
+  type: CNAME
+  value: recaptimedev-wiki.pages.dev.
 
 updates:
   octodns:
