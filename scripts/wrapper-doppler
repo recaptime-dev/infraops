@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2068,SC2046
+# SPDX-License-Identifier: MPL
+# This is a wrapper script around "doppler run" command for dotenvx CLI
+# and friends, especially in subdirectories with encrypted dotenv files
+# in form of SLUGIFIED_PATH_TO_THAT_FOLDER_DOTENV_PRIVTE_KEY[_ENVIRONMENT]
+# secret names via directory-specific run-with-doppler.sh scripts.
+set -e
+
+if [[ $DEBUG != "" ]]; then
+  set -x
+fi
+
+DOPPLER_PROJECT=${DOPPLER_PROJECT:-"meta"}
+DOPPLER_CONFIG=${DOPPLER_CONFIG:-"main_dotenv-keys"}
+
+# Load secrets first
+export $(doppler secrets download --project "${DOPPLER_PROJECT}" --config "${DOPPLER_CONFIG}" --format=env --no-file)
+export DOTENV_PRIVATE_KEY_CI=${INFRA_DOTENV_PRIVATE_KEY_CI} # for the root .env.ci file
+
+# run the command with the secrets loaded
+$@
