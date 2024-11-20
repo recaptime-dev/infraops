@@ -41,13 +41,14 @@
   value: gv-gozbfpjzyp6jef.dv.googlehosted.com.
 
 # proxyparty
-'*':
-- octodns:
-    cloudflare:
-      comment: wildcard proxyparty redirect via GCP
-  ttl: 300
-  type: CNAME
-  value: proxyparty.recaptime.dev.
+"*":
+  - octodns:
+      cloudflare:
+        proxied: true
+        comment: wildcard redirect via virtnet.bond VPS
+    ttl: 60
+    type: AAAA
+    value: 2a0f:85c1:8b5::7cc
 
 # DMARC settings
 _dmarc:

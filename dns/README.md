@@ -1,9 +1,8 @@
 # DNS records, managed by OctoDNS
 
-> [!note]
+> [!warning]
 > **Came here for managing your project subdomain's DNS records on `lorebooks.wiki`?**
-> You might prefer to [file a issue on the meta issue tracker](https://lorebooks.wiki/docs/issue-tracker) instead
-> unless you want to submit your DNS records for your documentation or wiki.
+> We'll be moving the process to a lorebooks-wiki repository soon! More to come later.
 
 We manage our Cloudflare DNS records as code for all of our domains through
 [OctoDNS](https://github.com/octodns/octodns) and manually ran by a human to

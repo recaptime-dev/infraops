@@ -31,10 +31,10 @@
   - octodns:
       cloudflare:
         proxied: true
-        comment: wildcard redirect via Porkbun
+        comment: wildcard redirect via virtnet.bond VPS
     ttl: 60
-    type: CNAME
-    value: uixie.porkbun.com.
+    type: AAAA
+    value: 2a0f:85c1:8b5::7cc
 "*.dom":
   - octodns:
       cloudflare:

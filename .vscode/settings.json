@@ -3,6 +3,7 @@
     "git.alwaysSignOff": true,
     "conventionalCommits.scopes": [
         "dns",
+        "docker",
         "cookbooks",
         "docs",
         "scripts",
@@ -18,5 +19,7 @@
             "prefix": "INFRA-",
             "url": "https://youtrack.recaptime.dev/issue/INFRA-<num>"
         }
-    ]
+    ],
+    "doppler.autocomplete.enable": true,
+    "doppler.hover.enable": true
 }
