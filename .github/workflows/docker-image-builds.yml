@@ -1,0 +1,68 @@
+name: Docker Images Builder
+
+on:
+  push:
+    paths:
+      - docker/*/**
+  schedule:
+    - cron: "0 16 * * 0" # midnight sunday in PHT
+  workflow_dispatch:
+
+jobs:
+  proxyparty:
+    runs-on: ubuntu-latest
+    concurrency:
+      cancel-in-progress: false
+      group: "docker-builds/proxyparty"
+    steps:
+      # Prepare buildx
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Checkout repo and generate image metadata
+      - uses: actions/checkout@v4
+      - name: Generate image metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            ghcr.io/recaptime-dev/infraops/proxypartylab-docker
+            mau.dev/recaptime-dev/infra/docker/proxypartylab
+            quay.io/recaptime-dev/proxypartylab-docker
+          tags: |
+            type=schedule,pattern=nightly
+            type=schedule,pattern={{date 'YYYYMMDD'}},prefix=nightly
+            type=ref,event=branch,prefix=branch
+            type=sha,prefix=commit
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GHCR_SERVICE_ACCOUNT_USERNAME }}
+          password: ${{ secrets.GHCR_SERVICE_ACCOUNT_PASSWORD }}
+      - uses: docker/login-action@v3
+        with:
+          registry: dock.mau.dev
+          username: ${{ secrets.MAUDEV_GLCR_USERNAME }}
+          password: ${{ secrets.MAUDEV_GLCR_TOKEN }}
+      - uses: docker/login-action@v3
+        with:
+          registry: quay.io
+          username: ${{ secrets.RHQCR_BOT_USERNAME }}
+          password: ${{ secrets.RHQCR_BOT_PASSWORD }}
+      
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          context: ./docker/proxypartylab
+      
+      - name: Deploy to production server
+        if: github.ref_name == 'main'
+        run: |
+          curl -fsSL https://tailscale.com/install.sh | bash -
+          echo sudo tailscale up 
