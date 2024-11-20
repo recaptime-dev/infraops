@@ -5,12 +5,12 @@ providers:
     delete_pcent_threshold: 0.25
     token: env/CLOUDFLARE_TOKEN
     update_pcent_threshold: 0.25
-  cf-sandbox:
-    account_id: dfa4ffaeef6265e4a8d18cffc5239754
-    class: octodns_cloudflare.CloudflareProvider
-    delete_pcent_threshold: 0.6
-    token: env/CLOUDFLARE_TOKEN
-    update_pcent_threshold: 0.6
+  #cf-sandbox:
+  #  account_id: dfa4ffaeef6265e4a8d18cffc5239754
+  #  class: octodns_cloudflare.CloudflareProvider
+  #  delete_pcent_threshold: 0.6
+  #  token: env/CLOUDFLARE_TOKEN
+  #  update_pcent_threshold: 0.6
   config:
     class: octodns.provider.yaml.YamlProvider
     directory: ./dns
