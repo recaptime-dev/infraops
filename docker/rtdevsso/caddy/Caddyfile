@@ -1,0 +1,13 @@
+{
+	email "internal-alerts-ping@recaptime.dev"
+	storage s3 {
+	}
+}
+
+https://accounts.recaptime.dev https://accounts.recaptime.eu.org {
+	tls {
+		cloudflare
+	}
+
+	reverse_proxy http://server:9000
+}

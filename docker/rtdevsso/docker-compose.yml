@@ -1,6 +1,6 @@
 services:
   server:
-    image: ${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-2024.8.2}
+    image: ${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-2024.10.2}
     restart: unless-stopped
     command: server
     volumes:
@@ -8,12 +8,10 @@ services:
       - ./custom-templates:/templates
     env_file: .env.production.decrypted
     environment:
-      - AUTHENTIK_REDIS__DB=1
-    ports:
-      - "${COMPOSE_PORT_HTTP:-9000}:9000"
-      - "${COMPOSE_PORT_HTTPS:-9443}:9443"
+      AUTHENTIK_REDIS__HOST: redis
+    networks: [internal]
   worker:
-    image: ${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-2024.8.2}
+    image: ${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-2024.10.2}
     restart: unless-stopped
     command: worker
     # `user: root` and the docker socket volume are optional.
@@ -23,11 +21,34 @@ services:
     # on the mounted folders, so when removing this make sure the folders have the correct UID/GID
     # (1000:1000 by default)
     user: root
-    environment:
-      - AUTHENTIK_REDIS__DB=1
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./media:/media
       - ./certs:/certs
       - ./custom-templates:/templates
+    environment:
+      AUTHENTIK_REDIS__HOST: redis
     env_file: .env.production.decrypted
+    networks: [internal]
+  redis:                                                                                                                                    
+    image: docker.io/library/redis:alpine                                                                                                   
+    command: --save 60 1 --loglevel warning                                                                                                 
+    restart: unless-stopped                                                                                                                 
+    healthcheck:                                                                
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]                         
+      start_period: 20s                                                         
+      interval: 30s                                                             
+      retries: 5                                                                
+      timeout: 3s                                                               
+    volumes:                                                                    
+      - redis:/data
+    networks: [internal]
+  caddy:
+    image: ghcr.io/andreijiroh-dev/docker-images/caddy
+    volumes:
+      - ./caddy:/etc/caddy
+
+networks:
+  internal:
+    external:
+      name: rtdevsso-router
