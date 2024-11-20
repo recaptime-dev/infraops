@@ -10,8 +10,11 @@ octodns-cloudflare = "*"
 [dev-packages]
 
 [requires]
-python_version = ">= 3.11"
+python_version = "3.12"
 
 [scripts]
+dns-export = "scripts/export-records.sh"
+dns-plan = "pipenv run dns-dryrun"
+dns-deploy = "pipenv run dns-apply"
 dns-dryrun = "octodns-sync --config-file=./octodns-config.yml"
 dns-apply = "octodns-sync --config-file=./octodns-config.yml --doit"
