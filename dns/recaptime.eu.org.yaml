@@ -54,16 +54,15 @@
     - 'mailru-domain: YftE9VeuZ2EZTPbu'
     - v=spf1 include:_spf.mx.cloudflare.net ~all
     - 'yandex-verification: 0d2fdb26bfcf7aa1'
-
-"*":
-  - octodns:
-      cloudflare:
-        proxied: true
-        comment: wildcard redirect via virtnet.bond VPS
-    ttl: 60
-    type: AAAA
-    value: 2a0f:85c1:8b5::7cc
-
+'*':
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wildcard redirect via virtnet.bond VPS
+      proxied: true
+  ttl: 300
+  type: AAAA
+  value: 2a0f:85c1:8b5::7cc
 _acme-challenge.cla:
   octodns:
     cloudflare:
@@ -174,6 +173,13 @@ _github-challenge-recaptime-organization:
   ttl: 300
   type: TXT
   value: '5357527408'
+_github-pages-challenge-recaptime-dev:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: 91b096fa57779bc99b6d8c2410951d
 _keybase.jira:
   octodns:
     cloudflare:
@@ -398,9 +404,11 @@ go:
   octodns:
     cloudflare:
       auto-ttl: true
+      comment: golinks
+      proxied: true
   ttl: 300
   type: CNAME
-  value: recaptime-golinks.darkcustomdomain.com.
+  value: recaptimedev-golinks.pages.dev.
 guest:
   octodns:
     cloudflare:
@@ -704,9 +712,9 @@ verify.cdn:
   value: rtapp-verify-cdn.netlify.app.
 wiki:
   octodns:
-      cloudflare:
-        auto-ttl: true
-        proxied: true
+    cloudflare:
+      auto-ttl: true
+      proxied: true
   ttl: 300
   type: CNAME
   value: recaptimedev-wiki.pages.dev.

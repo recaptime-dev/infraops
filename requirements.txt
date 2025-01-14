@@ -1,2 +1,14 @@
--e git+https://github.com/octodns/octodns.git@a6b6bfdd0399bdaf10917c7558e71881081e3e78#egg=octodns
--e git+https://github.com/octodns/octodns-cloudflare.git@bcaa09c974ce81d7497a2fdfa5c214ab75609beb#egg=octodns-cloudflare
+-i https://pypi.org/simple
+certifi==2024.12.14; python_version >= '3.6'
+charset-normalizer==3.4.1; python_version >= '3.7'
+dnspython==2.7.0; python_version >= '3.9'
+fqdn==1.5.1; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'
+idna==3.10; python_version >= '3.6'
+natsort==8.4.0; python_version >= '3.7'
+octodns==1.10.0; python_version >= '3.8'
+octodns-cloudflare==0.0.7; python_version >= '3.6'
+python-dateutil==2.9.0.post0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'
+pyyaml==6.0.2; python_version >= '3.8'
+requests==2.32.3; python_version >= '3.8'
+six==1.17.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'
+urllib3==2.3.0; python_version >= '3.9'

@@ -1,5 +1,6 @@
-"":
-  - octodns:
+---
+? ''
+: - octodns:
       cloudflare:
         auto-ttl: true
         proxied: true
@@ -11,43 +12,55 @@
         auto-ttl: true
     ttl: 300
     type: MX
-    values:
-      - exchange: diphda.uberspace.de.
-        preference: 10
+    value:
+      exchange: diphda.uberspace.de.
+      preference: 10
   - octodns:
       cloudflare:
         auto-ttl: true
+        comment: Stripe verification code for emails
     ttl: 300
     type: TXT
     values:
-      - ENS1 dnsname.ens.eth 0xFe2Ff527cB1A135ecb592518a107de691530b31d
-      - MS=ms39000200
-      - google-site-verification=UUIx8aGWyMtRoS131COX6MKY4DV1mYpLKbdpVG42dqs
-      - google-site-verification=ZeevTA8-YICg9oZgx1fhQ_6U1YtMqfwUBH-c77hFWjc
-      - hosted-email-verify=n5g5w5tn
-      - "mailru-domain: j2Kcy7D6miihgSvs"
-      - v=spf1 include:spf.migadu.com include:_spf.mail.ru include:diphda.uberspace.de -all
-"*":
-  - octodns:
-      cloudflare:
-        proxied: true
-        comment: wildcard redirect via virtnet.bond VPS
-    ttl: 60
-    type: AAAA
-    value: 2a0f:85c1:8b5::7cc
-"*.dom":
-  - octodns:
-      cloudflare:
-        auto-ttl: true
-    ttl: 300
-    type: A
-    value: 108.61.99.160
-  - octodns:
-      cloudflare:
-        auto-ttl: true
-    ttl: 300
-    type: AAAA
-    value: 2a05:f480:1400:2df3:5400:4ff:fed4:9217
+    - ENS1 dnsname.ens.eth 0xFe2Ff527cB1A135ecb592518a107de691530b31d
+    - MS=ms39000200
+    - google-site-verification=UUIx8aGWyMtRoS131COX6MKY4DV1mYpLKbdpVG42dqs
+    - google-site-verification=ZeevTA8-YICg9oZgx1fhQ_6U1YtMqfwUBH-c77hFWjc
+    - hosted-email-verify=n5g5w5tn
+    - 'mailru-domain: j2Kcy7D6miihgSvs'
+    - stripe-verification=3b3ba1011d39f213cf5b99f1a657606a5979fef854616bf2c4d4a647e3c24a21
+    - v=spf1 include:spf.migadu.com include:_spf.mail.ru include:diphda.uberspace.de
+      -all
+7afzhmm2ooy4o5nliupcld7dwxkteb4a._domainkey:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: Stripe custom email domain DKIM
+  ttl: 300
+  type: CNAME
+  value: 7afzhmm2ooy4o5nliupcld7dwxkteb4a.dkim.custom-email-domain.stripe.com.
+'*':
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: wildcard redirect via virtnet.bond VPS
+      proxied: true
+  ttl: 300
+  type: AAAA
+  value: 2a0f:85c1:8b5::7cc
+'*.dom':
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: A
+  value: 108.61.99.160
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: AAAA
+  value: 2a05:f480:1400:2df3:5400:4ff:fed4:9217
 _acme-challenge.kinde:
   octodns:
     cloudflare:
@@ -121,19 +134,23 @@ _vercel:
   type: TXT
   value: vc-domain-verify=comments.recaptime.dev,3c4c5d59d3fffcca3bd1
 accounts:
-- ttl: 300
+  ttl: 300
   type: CNAME
   value: 7hp0zh5h.up.railway.app.
 blog:
-- ttl: 300
-  type: A
-  value: 37.27.51.34
-- ttl: 300
-  type: AAAA
-  value: "2a01:4f9:3081:399c::4"
-- ttl: 300
-  type: TXT
-  value: domain-verification=ajhalili2006
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: ajhalili2006.hackclub.app.
+bounce:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: custom-email-domain.stripe.com.
 comments:
   octodns:
     cloudflare:
@@ -143,26 +160,27 @@ comments:
   type: CNAME
   value: cname.vercel-dns.com.
 crew:
-  - octodns:
-      cloudflare:
-        auto-ttl: true
-        comment: uberspace
-    ttl: 300
-    type: MX
-    value:
-      exchange: diphda.uberspace.de.
-      preference: 10
-  - octodns:
-      cloudflare:
-        auto-ttl: true
-    ttl: 300
-    type: TXT
-    values:
-      - TAILSCALE-n8Ir7YzealXcFPJgZTHP
-      - atlassian-domain-verification=Beg4N1aB/9owCmMnPt/WuGmkv7pyEjBmr8V5ICzgzAOf5hFhrLoGU7P92dFMIlYv
-      - hosted-email-verify=u04k0bzq
-      - v=spf1 include:spf.migadu.com include:_spf.mail.ru ~all
-      - stripe-verification=86F40BEB0F1B94D8AAE7444939D089359C5888BA580DDCCDADB7CE060921BE30
+- octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: uberspace
+  ttl: 300
+  type: MX
+  value:
+    exchange: diphda.uberspace.de.
+    preference: 10
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  values:
+  - TAILSCALE-n8Ir7YzealXcFPJgZTHP
+  - atlassian-domain-verification=Beg4N1aB/9owCmMnPt/WuGmkv7pyEjBmr8V5ICzgzAOf5hFhrLoGU7P92dFMIlYv
+  - canva-site-verification=Etx1DuCF5Chf16UTVR0PxQ
+  - hosted-email-verify=u04k0bzq
+  - stripe-verification=86F40BEB0F1B94D8AAE7444939D089359C5888BA580DDCCDADB7CE060921BE30
+  - v=spf1 include:spf.migadu.com include:_spf.mail.ru ~all
 docs:
   octodns:
     cloudflare:
@@ -171,13 +189,15 @@ docs:
   ttl: 300
   type: CNAME
   value: c045ef9fc2-hosting.gitbook.io.
-dom:
-  - octodns:
-      cloudflare:
-        auto-ttl: true
-    ttl: 300
-    type: TXT
-    value: domcloud-authorized-email-domains=crew.recaptime.dev,andreijiroh.xyz
+go:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: golinks
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: recaptimedev-golinks.pages.dev.
 hashnode:
   octodns:
     cloudflare:
@@ -185,18 +205,6 @@ hashnode:
   ttl: 300
   type: CNAME
   value: hashnode.network.
-uberspace._domainkey:
-  octodns:
-    cloudflare:
-      auto-ttl: true
-      comment: uberspace
-  ttl: 300
-  type: TXT
-  value: v=DKIM1\;t=s\;n=core\;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvx7Lp9qXSz29jUEBE4WKwxvNPKOmV3jDGrUXD894y8ZAD3MiHRdYGZ7j7mLZqonHT+bPkp8+v+RDEPxWgB+YGzmAVVMppNpPuXjfvJzXUqs6sPaXLPLpiVsLkV5W9hCOXioGMf/8NCjU76BqeryBu1rqIfQo477g0rXC9Q1w3vfhqTgm/7WgNCTOnkEhRo1hoRX4uP37vTQNzi2ou2thBCiZ8hZ89LQmrAHTA88y3EUzv8Ln2YjbNpSwhZ6SJ2Ti3rJK9CAu1Yun8Xlg9dVeOlToY/tbyomrlIrsYWK5Y+dZ8JW/5Hmtow2vcTNWEW8SQDEWUXPTQrH4zLRy3KhR1QIDAQAB
-uberspace._domainkey.crew:
-  ttl: 300
-  type: CNAME
-  value: uberspace._domainkey.recaptime.dev.
 kinde:
   octodns:
     cloudflare:
@@ -204,6 +212,11 @@ kinde:
   ttl: 300
   type: CNAME
   value: eu.kinde.com.
+links:
+- type: A
+  value: 103.169.142.0
+- type: TXT
+  value: canva-domain-verify=4a83aea0-941b-4451-8728-c7f333e35041
 lyncdiscover.crew:
   type: CNAME
   value: webdir.online.lync.com.
@@ -235,38 +248,49 @@ resend._domainkey.notifications:
       auto-ttl: true
   ttl: 300
   type: TXT
-  value: >-
-    p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCcR2y+Dp4cyZ6nU4Gpbp9JObfDh/7k3dyXrgwiyZsLlgxRnlqf/ocU96qr/Vgzp82pBMVoy89y0LeOAsPtKFFDFcm3E6NklDR4EXptO4mdCoxCd6J4krK84V4W0gJFbyZIcBr7cvUumHX0fVD4DeGZfw2JCdn2YMCzK+cRZwz62wIDAQAB
-sso.crew:
-  ttl: 300
-  type: CNAME
-  value: recaptimesquad-cd-gjiq8iudghbg4i3w.edge.tenants.eu.auth0.com.
+  value: p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCcR2y+Dp4cyZ6nU4Gpbp9JObfDh/7k3dyXrgwiyZsLlgxRnlqf/ocU96qr/Vgzp82pBMVoy89y0LeOAsPtKFFDFcm3E6NklDR4EXptO4mdCoxCd6J4krK84V4W0gJFbyZIcBr7cvUumHX0fVD4DeGZfw2JCdn2YMCzK+cRZwz62wIDAQAB
 send.notifications:
-  - octodns:
-      cloudflare:
-        auto-ttl: true
-    ttl: 300
-    type: MX
-    value:
-      exchange: feedback-smtp.us-east-1.amazonses.com.
-      preference: 10
-  - octodns:
-      cloudflare:
-        auto-ttl: true
-    ttl: 300
-    type: TXT
-    value: v=spf1 include:amazonses.com ~all
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: MX
+  value:
+    exchange: feedback-smtp.us-east-1.amazonses.com.
+    preference: 10
+- octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: TXT
+  value: v=spf1 include:amazonses.com ~all
 sso.crew:
   ttl: 300
   type: CNAME
   value: recaptimesquad-cd-gjiq8iudghbg4i3w.edge.tenants.eu.auth0.com.
-support:
+strong1._domainkey:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: Help Scout
+  ttl: 300
+  type: CNAME
+  value: strong1._domainkey.helpscout.net.
+strong2._domainkey:
   octodns:
     cloudflare:
       auto-ttl: true
   ttl: 300
   type: CNAME
-  value: c045ef9fc2-hosting.gitbook.io.
+  value: strong2._domainkey.helpscout.net.
+support:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: Help Scout Docs site
+  ttl: 300
+  type: CNAME
+  value: recaptime-dev.helpscoutdocs.com.
 transparency:
   ttl: 300
   type: CNAME
@@ -278,13 +302,34 @@ treasury:
   ttl: 300
   type: TXT
   value: ENS1 dnsname.ens.eth 0xFe2Ff527cB1A135ecb592518a107de691530b31d
+txy2wsy5sg4lzmqxrk3glycu4pslgg3c._domainkey:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: Stripe custom email domain DKIM
+  ttl: 300
+  type: CNAME
+  value: txy2wsy5sg4lzmqxrk3glycu4pslgg3c.dkim.custom-email-domain.stripe.com.
+uberspace._domainkey:
+  octodns:
+    cloudflare:
+      auto-ttl: true
+      comment: uberspace
+  ttl: 300
+  type: TXT
+  value: v=DKIM1\;t=s\;n=core\;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvx7Lp9qXSz29jUEBE4WKwxvNPKOmV3jDGrUXD894y8ZAD3MiHRdYGZ7j7mLZqonHT+bPkp8+v+RDEPxWgB+YGzmAVVMppNpPuXjfvJzXUqs6sPaXLPLpiVsLkV5W9hCOXioGMf/8NCjU76BqeryBu1rqIfQo477g0rXC9Q1w3vfhqTgm/7WgNCTOnkEhRo1hoRX4uP37vTQNzi2ou2thBCiZ8hZ89LQmrAHTA88y3EUzv8Ln2YjbNpSwhZ6SJ2Ti3rJK9CAu1Yun8Xlg9dVeOlToY/tbyomrlIrsYWK5Y+dZ8JW/5Hmtow2vcTNWEW8SQDEWUXPTQrH4zLRy3KhR1QIDAQAB
+uberspace._domainkey.crew:
+  ttl: 300
+  type: CNAME
+  value: uberspace._domainkey.recaptime.dev.
 vault:
   octodns:
     cloudflare:
       auto-ttl: true
+      comment: Vaultwarden, hosted on Nest
   ttl: 300
   type: CNAME
-  value: 407aa51e-9199-4aeb-9401-c68868ba83de.cname.koyeb.app.
+  value: ajhalili2006.hackclub.app.
 wiki:
   octodns:
     cloudflare:
@@ -293,6 +338,9 @@ wiki:
   ttl: 300
   type: CNAME
   value: recaptimedev-wiki.pages.dev.
+www.links:
+  type: A
+  value: 103.169.142.0
 youtrack:
   octodns:
     cloudflare:

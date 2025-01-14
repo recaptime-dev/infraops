@@ -26,6 +26,7 @@ squad:
   type: CNAME
   value: recaptimedev-wiki.pages.dev.
 
+# Wildcards
 "*":
   - octodns:
       cloudflare:
@@ -34,6 +35,21 @@ squad:
     ttl: 60
     type: AAAA
     value: 2a0f:85c1:8b5::7cc
+'*.templates':
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: lorebooks-wiki.github.io.
+'*.mkdocs':
+  octodns:
+    cloudflare:
+      auto-ttl: true
+  ttl: 300
+  type: CNAME
+  value: lorebooks-wiki.github.io.
+
 
 hackclub.beta:
   octodns:
@@ -42,14 +58,6 @@ hackclub.beta:
   ttl: 300
   type: CNAME
   value: ajhalili2006.hackclub.app.
-
-'*.templates':
-  octodns:
-    cloudflare:
-      auto-ttl: true
-  ttl: 300
-  type: CNAME
-  value: lorebooks-wiki.github.io.
 
 # DO NOT TOUCH: GitHub organization verification records
 _gh-lorebooks-wiki-o:
