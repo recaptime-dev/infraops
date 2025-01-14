@@ -1,0 +1,21 @@
+name: GitHub Issue LabelOps
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/labels.yml
+      - .github/workflows/labels-manager.yml
+
+jobs:
+  sync-config:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync labels using config
+        uses: crazy-max/ghaction-github-labeler@v5
+        #continue-on-error: true
+        with:
+          github-token: ${{ secrets.RTDEVBOT_GITHUB_TOKEN }}
+          yaml-file: .github/labels.yml
+          dry-run: ${{ github.event_name == 'pull_request' }}
+          skip-delete: true

@@ -1,0 +1,44 @@
+# This YAML is where we manage GitHub labels as code
+
+## The basics
+- name: kind/bug
+  from_name: "bug"
+  description: Something isn't working
+  color: d73a4a
+- name: kind/documentation
+  description: Improvements or additions to the documentation, especially on the wiki and contributing guidelines.
+  color: 0075ca
+  from_name: documentation
+- name: duplicate
+  description: This issue or patch/merge request already exists
+  color: cfd3d7
+- name: kind/enhancement
+  from_name: enhancement
+  description: New feature or request
+  color: a2eeef
+- name: good first issue
+  description: Good for first-time contributors
+  color: 7057ff
+- name: help wanted
+  description: Extra attention and assistance required
+  color: 008672
+- name: invalid
+  description: This doesn't seem right
+  color: e4e669
+- name: missing info
+  from_name: question
+  description: Further information is requested
+  color: d876e3
+- name: wontfix
+  description: THis will not be worked on
+  color: ffffff
+- name: kind/upstream
+  description: The issue is being flagged on or imported/copied from upstream.
+
+## infra specifics
+- name: infra/docker
+  description: Docker images for our infrastructure and dev environments.
+- name: infra/nixpkgs
+  description: Nix flake-based configurations and software packages for NixOS/nixpkgs
+- name: infra/dns
+  description: octoDNS-powered YAML DNS zonefiles and config
