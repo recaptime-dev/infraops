@@ -1,6 +1,6 @@
 name: General Infrastructure Requests
 title: "[infra] "
-description: Sample description
+description: Submit a generat infrastructure request for those without specific issue forms/template.
 assignees: [ajhalili2006,RecapTimeBot]
 type: Task
 body:
@@ -30,13 +30,13 @@ body:
       label: "Are you either a @recaptime-dev/squad team member or community maintainer?"
       description: "If neither of these, your request might be rejected or take longer to review."
       options:
-      - Yes
-      - Yes, community maintainer
-      - No
+      - "Yes, I am a RecapTime.dev team member"
+      - "Yes, I am an community maintainer (including HCB team and trusted community members)"
+      - "No, I am neither of those"
   - id: description
     type: textarea
     attributes:
-      labels: About this request
-      description: "Please describe your request as much as possible."
+      label: About this request
+      description: "Please describe your request as much as possible. You may mention other issues in this field as needed."
     validations:
       required: true
