@@ -1,0 +1,42 @@
+name: General Infrastructure Requests
+title: "[infra] "
+description: Sample description
+assignees: [ajhalili2006,RecapTimeBot]
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this issue form to submit requests relating to our Infrastructure (e.g., CI/CD, cloud resources,
+        secrets/API keys, etc.). Note that this is not for requesting access to our infrastructure, but rather
+        for provisioning resources or changing the configuration/environment. 
+  - id: type
+    type: dropdown
+    attributes:
+      label: Request Type
+      description: Select the type of infrastructure request you are making.
+      options:
+        - Secrets/Key Management
+        - IaaC Configuration
+        - DNS Management
+        - Cloud Resources
+        - API Access
+        - Others
+    validations:
+      required: true
+  - id: is_crew
+    type: dropdown
+    attributes:
+      label: "Are you either a @recaptime-dev/squad team member or community maintainer?"
+      description: "If neither of these, your request might be rejected or take longer to review."
+      options:
+      - Yes
+      - Yes, community maintainer
+      - No
+  - id: description
+    type: textarea
+    attributes:
+      labels: About this request
+      description: "Please describe your request as much as possible."
+    validations:
+      required: true
