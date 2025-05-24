@@ -1,0 +1,10 @@
+# Enable not only main and community, but also testing repo on edge
+http://dl-cdn.alpinelinux.org/alpine/edge/main
+http://dl-cdn.alpinelinux.org/alpine/edge/community
+http://dl-cdn.alpinelinux.org/alpine/edge/testing
+
+# 1Password CLI - https://developer.1password.com/docs/cli/get-started
+https://downloads.1password.com/linux/alpinelinux/stable/
+
+# Doppler CLI - https://docs.doppler.com/docs/install-cli#installation
+https://packages.doppler.com/public/cli/alpine/any-version/main
